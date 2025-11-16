@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About • ambapay</title>
+    <link rel="icon" type="image/svg+xml" href="./ambapay-icon.svg">
+    <meta name="theme-color" content="hsl(147, 55%, 28%)">
+    <style>
+        :root {
+            --primary: hsl(147, 55%, 28%);
+            /* app primary green */
+            --primary-light: hsl(147, 40%, 45%);
+            /* lighter green (from border/input) */
+            --secondary: hsl(33, 100%, 71%);
+            /* lighter yellow/orange */
+            --secondary-light: hsl(33, 100%, 85%);
+            --background: #ffffff;
+            /* white background */
+            --foreground: hsl(240, 10%, 3.9%);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--background);
+            color: var(--foreground);
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 20px 56px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 28px 20px;
+            border: 1px solid var(--primary-light);
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(16, 93, 56, 0.06) 0%, rgba(16, 93, 56, 0.02) 100%);
+        }
+
+        .hero-logo {
+            width: 64px;
+            height: 64px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: #fff;
+            border: 1px solid rgba(16, 93, 56, 0.15);
+            padding: 8px;
+        }
+
+        .hero-title {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+        .hero-title .brand-amba {
+            color: var(--primary);
+        }
+
+        .hero-title .brand-pay {
+            color: var(--secondary);
+        }
+
+        .lede {
+            margin-top: 8px;
+            color: rgba(0, 0, 0, 0.72);
+            font-size: 16px;
+        }
+
+        .grid {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            grid-column: span 12;
+            border-radius: 14px;
+            border: 1px solid rgba(16, 93, 56, 0.15);
+            background: #fff;
+            padding: 18px 16px;
+            box-shadow: 0 1px 0 rgba(16, 93, 56, 0.05), 0 8px 24px rgba(16, 93, 56, 0.06);
+        }
+
+        .card h3 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            color: var(--primary);
+        }
+
+        .list {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--secondary-light);
+            color: #5a3a06;
+            border: 1px solid rgba(247, 146, 58, 0.25);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding-top: 24px;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.55);
+            font-size: 12px;
+        }
+
+        @media (min-width: 700px) {
+            .card {
+                grid-column: span 6;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-logo" aria-hidden="true">
+                <img src="./ambapay-icon.svg" alt="ambapay logo" width="48" height="48">
+            </div>
+            <div>
+                <div class="hero-title">
+                    <span class="brand-amba">amba</span><span class="brand-pay">pay</span>
+                    <span class="badge">Secure wallet</span>
+                </div>
+                <p class="lede">A secure, modern wallet that lets you move money with ease.</p>
+            </div>
+        </header>
+
+        <section class="grid">
+            <article class="card">
+                <h3>What is ambapay?</h3>
+                <p>ambapay is a digital wallet system for users to securely manage and move money. It supports transfers
+                    using cards as well as Apple Pay and Google Pay.</p>
+            </article>
+            <article class="card">
+                <h3>Send and request money</h3>
+                <ul class="list">
+                    <li>Send money to contacts or newly added recipients</li>
+                    <li>Request money from contacts directly within the app</li>
+                    <li>Receive notifications for requests and completed donations</li>
+                </ul>
+            </article>
+            <article class="card">
+                <h3>Security first</h3>
+                <p>Most pages are protected with biometrics for strong, user-friendly authentication.</p>
+            </article>
+            <article class="card">
+                <h3>Do more with ambapay</h3>
+                <ul class="list">
+                    <li>Purchase tickets to events during event season</li>
+                    <li>Manage your cards and recipients with simple, clear controls</li>
+                </ul>
+            </article>
+        </section>
+
+        <p class="footer">© <span id="year"></span> ambapay. All rights reserved.</p>
+    </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
